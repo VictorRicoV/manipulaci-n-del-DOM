@@ -213,3 +213,24 @@ const hotelesOrdenados = hoteles.toSorted(function (a, b) {
 for (let i = 0; i < hotelesOrdenados.length; i++) {
   console.log(hotelesOrdenados[i].nombre);
 }
+
+const persona = {
+  nombre: 'Juan',
+  edad: 25,
+  saludar() {
+    console.log(`Hola, soy ${this.nombre}`);
+  },
+  incrementarEdad() {
+    let cumplirEdad = this.edad;
+
+    return function obtenerEdad() {
+      return cumplirEdad++;
+    };
+  },
+};
+
+const edadIncrementada = persona.incrementarEdad()
+persona.saludar();
+
+
+window.persona = persona;
